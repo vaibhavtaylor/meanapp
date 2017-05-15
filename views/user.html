@@ -19,20 +19,24 @@
 <body>
     <div class="jumbotron">
         <h1>User Data</h1>
-        <div class="input-group" ng-controller="userInput">
-            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="username">
-            <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" ng-model="age">
-            <span class="btn-group" role="group" aria-label="...">
+        <div ng-controller="userInput">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" ng-model="username">
+                <input type="text" class="form-control" placeholder="Age" aria-describedby="basic-addon1" ng-model="age">
+            </div>
+            <div>
+                <span class="btn-group" role="group" aria-label="...">
                 <button type="button" class="btn btn-default" ng-click="addFun()">Add User</button>
                 <button type="button" class="btn btn-default" ng-click="deleteFun()">Delete User</button>
                 <button type="button" class="btn btn-default" ng-click="updateFun()">Update User</button>
                 <button type="button" class="btn btn-default" ng-click="findFun()">Find User</button>
             </span>
+            </div>
         </div>
 
         <div ng-controller="myController">
-            <ul ng-repeat="item in data">
-                <li>Name: {{item.username}} Age: {{item.age}}</li>
+            <ul ng-repeat="item in data" class="list-group">
+                <li class="list-group-item">Name: {{item.username}} Age: {{item.age}}</li>
             </ul>
         </div>
     </div>
